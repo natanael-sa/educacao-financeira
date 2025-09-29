@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simuladores Financeiros</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Simuladores Financeiros</h1>
+    <nav>
+      <button class="tablink" onclick="abrirAba('emprestimo')">Empréstimo</button>
+      <button class="tablink" onclick="abrirAba('financiamento')">Financiamento</button>
+      <button class="tablink" onclick="abrirAba('saldo')">Saldo Devedor</button>
+    </nav>
+  </header>
+
+  <!-- Empréstimo -->
+  <section id="emprestimo" class="tabcontent">
+    <h2>Simulador de Empréstimo (Price)</h2>
+    <label>Valor do empréstimo (R$):</label>
+    <input type="number" id="valorEmprestimo"><br>
+    <label>Taxa de juros (% ao mês):</label>
+    <input type="number" id="jurosEmprestimo"><br>
+    <label>Número de parcelas:</label>
+    <input type="number" id="parcelasEmprestimo"><br>
+    <button onclick="simularEmprestimo()">Calcular</button>
+    <p id="resultadoEmprestimo"></p>
+  </section>
+
+  <!-- Financiamento -->
+  <section id="financiamento" class="tabcontent" style="display:none">
+    <h2>Simulador de Financiamento (SAC)</h2>
+    <label>Valor do financiamento (R$):</label>
+    <input type="number" id="valorFinanciamento"><br>
+    <label>Taxa de juros (% ao mês):</label>
+    <input type="number" id="jurosFinanciamento"><br>
+    <label>Número de parcelas:</label>
+    <input type="number" id="parcelasFinanciamento"><br>
+    <button onclick="simularFinanciamento()">Calcular</button>
+    <div id="resultadoFinanciamento"></div>
+  </section>
+
+  <!-- Saldo Devedor -->
+  <section id="saldo" class="tabcontent" style="display:none">
+    <h2>Simulador de Saldo Devedor</h2>
+    <label>Valor inicial (R$):</label>
+    <input type="number" id="valorInicial"><br>
+    <label>Taxa de juros (% ao mês):</label>
+    <input type="number" id="jurosSaldo"><br>
+    <label>Número de parcelas:</label>
+    <input type="number" id="parcelasSaldo"><br>
+    <label>Parcelas já pagas:</label>
+    <input type="number" id="pagasSaldo"><br>
+    <button onclick="calcularSaldo()">Calcular</button>
+    <p id="resultadoSaldo"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
